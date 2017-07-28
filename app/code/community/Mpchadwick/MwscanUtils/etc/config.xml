@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mpchadwick_MwscanUtils>
+             <version>0.1.0</version>
+        </Mpchadwick_MwscanUtils>
+    </modules>
+    <frontend>
+        <routers>
+            <mpchadwick_mwscanutils>
+                <use>standard</use>
+                <args>
+                    <module>Mpchadwick_MwscanUtils</module>
+                    <frontName>mpchadwick_mwscanutils</frontName>
+                </args>
+            </mpchadwick_mwscanutils>
+        </routers>
+    </frontend>
+</config>
