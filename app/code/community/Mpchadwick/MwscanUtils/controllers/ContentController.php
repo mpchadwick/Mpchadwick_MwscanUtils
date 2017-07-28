@@ -1,6 +1,6 @@
 <?php
 
-class Mpchadwick_MwscanUtils_CmsController extends Mage_Core_Controller_Front_Action
+class Mpchadwick_MwscanUtils_ContentController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
     {
@@ -17,6 +17,10 @@ class Mpchadwick_MwscanUtils_CmsController extends Mage_Core_Controller_Front_Ac
         foreach ($data as $datum) {
             $content[] = $datum['content'];
         }
+
+        // TODO - Fetch for ALL store view...
+        $content[] = Mage::getStoreConfig('design/head/includes');
+        $content[] = Mage::getStoreConfig('design/footer/absolute_footer');
 
         $response = $this->getResponse();
         $response->setHeader('Content-Type', 'text/plain', true);
