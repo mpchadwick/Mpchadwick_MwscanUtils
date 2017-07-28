@@ -5,7 +5,31 @@
              <version>0.1.0</version>
         </Mpchadwick_MwscanUtils>
     </modules>
+    <global>
+        <models>
+            <mpchadwick_mwscanutils>
+                <class>Mpchadwick_MwscanUtils_Model</class>
+            </mpchadwick_mwscanutils>
+        </models>
+        <resources>
+            <mpchadwick_mwscanutils_setup>
+                <setup>
+                    <module>Mpchadwick_MwscanUtils</module>
+                </setup>
+            </mpchadwick_mwscanutils_setup>
+        </resources>
+    </global>
     <frontend>
+        <events>
+            <controller_action_predispatch_checkout_onepage_index>
+                <observers>
+                    <mpchadwick_mwscanutils>
+                        <model>mpchadwick_mwscanutils/observer</model>
+                        <method>allowRendering</method>
+                    </mpchadwick_mwscanutils>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_index>
+        </events>
         <routers>
             <mpchadwick_mwscanutils>
                 <use>standard</use>
