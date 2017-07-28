@@ -11,7 +11,7 @@
                 <use>standard</use>
                 <args>
                     <module>Mpchadwick_MwscanUtils</module>
-                    <frontName>mpchadwick_mwscanutils</frontName>
+                    <frontName>mwscanutils</frontName>
                 </args>
             </mpchadwick_mwscanutils>
         </routers>
