@@ -19,6 +19,33 @@ From a scanning location, you should send the output of this to mwscan.
 curl --silent https://example.com/mwscanutils/content > content && grep -Erlf mwscan.txt content
 ```
 
+Additional content can be appended as needed by observing the `mpchadwick_mwscanutils_dump_content_before` event
+
+**config.xml**
+
+```xml
+<mpchadwick_mwscanutils_dump_content_before>
+    <observers>
+        <example>
+            <model>example/observer</model>
+            <method>appendContent</method>
+        </example>
+    </observers>
+</mpchadwick_mwscanutils_dump_content_before>
+```
+
+**Observer.php**
+
+```php
+public function appendContent(Varien_Event_Observer $observer)
+{
+    $container = $observer->getContainer();
+    $content = $container->getContent();
+    $content[] = 'Dump this too.';
+    $container->setContent($content);
+}
+```
+
 ### /checkout/onepage HTML
 
 Adds the ability to fetch the HTML for `/checkout/onepage` programmatically. Pass the `mwscanutils_force` param as follows...
