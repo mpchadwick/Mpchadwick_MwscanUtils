@@ -1,5 +1,7 @@
 # Mpchadwick_MwscanUtils
 
+[![Build Status](https://travis-ci.org/mpchadwick/Mpchadwick_MwscanUtils.svg?branch=master)](https://travis-ci.org/mpchadwick/Mpchadwick_MwscanUtils)
+
 A set of utilities for use in tandem with [magento-malware-scanner](https://github.com/gwillem/magento-malware-scanner).
 
 ## Features
