@@ -18,7 +18,9 @@ class Mpchadwick_MwscanUtils_ContentdumpController extends Mage_Core_Controller_
             $content[] = $datum['content'];
         }
 
+        // @codingStandardsIgnoreStart
         // TODO - Fetch for ALL store view...
+        // @codingStandardsIgnoreEnd
         $content[] = Mage::getStoreConfig('design/head/includes');
         $content[] = Mage::getStoreConfig('design/footer/absolute_footer');
 
