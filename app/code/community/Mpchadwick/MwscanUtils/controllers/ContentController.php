@@ -22,8 +22,15 @@ class Mpchadwick_MwscanUtils_ContentController extends Mage_Core_Controller_Fron
         $content[] = Mage::getStoreConfig('design/head/includes');
         $content[] = Mage::getStoreConfig('design/footer/absolute_footer');
 
+        $container = new Varien_Object;
+        $container->setContent($content);
+        Mage::dispatchEvent(
+            'mpchadwick_mwscanutils_dump_content_before',
+            array('container' => $container)
+        );
+
         $response = $this->getResponse();
         $response->setHeader('Content-Type', 'text/plain', true);
-        $response->appendBody(implode(PHP_EOL . PHP_EOL . '----' .  PHP_EOL . PHP_EOL, $content));
+        $response->appendBody(implode(PHP_EOL . PHP_EOL . '----' .  PHP_EOL . PHP_EOL, $container->getContent()));
     }
 }
