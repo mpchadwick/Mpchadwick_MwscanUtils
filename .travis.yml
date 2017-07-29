@@ -5,4 +5,4 @@ before_script:
   - curl -OL https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
   - composer require magento-ecg/coding-standard
 script:
-  - php phpcs.phar --standard=vendor/magento-ecg/coding-standard/Ecg .
+  - php phpcs.phar --standard=vendor/magento-ecg/coding-standard/Ecg ./app
