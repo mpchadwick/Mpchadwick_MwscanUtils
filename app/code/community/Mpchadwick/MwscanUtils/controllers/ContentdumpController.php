@@ -1,6 +1,6 @@
 <?php
 
-class Mpchadwick_MwscanUtils_ContentController extends Mage_Core_Controller_Front_Action
+class Mpchadwick_MwscanUtils_ContentdumpController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
     {

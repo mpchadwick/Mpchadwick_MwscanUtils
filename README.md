@@ -6,7 +6,7 @@ A set of utilities for use in tandem with [magento-malware-scanner](https://gith
 
 ### Content Dump Endpoint
 
-Adds an endpoint at `/mwscanutils/content` which returns a `text/plain` response including...
+Adds an endpoint at `/mwscanutils/contentdump` which returns a `text/plain` response including...
 
 - Content from ALL CMS pages
 - Content from ALL CMS blocks
