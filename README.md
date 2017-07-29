@@ -18,7 +18,7 @@ Adds an endpoint at `/mwscanutils/contentdump` which returns a `text/plain` resp
 From a scanning location, you should send the output of this to mwscan.
 
 ```
-curl --silent https://example.com/mwscanutils/content > content && grep -Erlf mwscan.txt content
+curl --silent https://example.com/mwscanutils/contentdump > content && grep -Erlf mwscan.txt content
 ```
 
 Additional content can be appended as needed by observing the `mpchadwick_mwscanutils_dump_content_before` event
