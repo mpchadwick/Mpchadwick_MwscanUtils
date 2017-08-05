@@ -2,6 +2,8 @@
 
 class Mpchadwick_MwscanUtils_ContentdumpController extends Mage_Core_Controller_Front_Action
 {
+    const SEPARATOR = PHP_EOL . PHP_EOL . '----' . PHP_EOL . PHP_EOL;
+
     protected $configKeys = array(
         'design/head/includes',
         'design/footer/absolute_footer'
@@ -31,6 +33,6 @@ class Mpchadwick_MwscanUtils_ContentdumpController extends Mage_Core_Controller_
 
         $response = $this->getResponse();
         $response->setHeader('Content-Type', 'text/plain', true);
-        $response->appendBody(implode(PHP_EOL . PHP_EOL . '----' .  PHP_EOL . PHP_EOL, $container->getContent()));
+        $response->appendBody(implode(self::SEPARATOR, $container->getContent()));
     }
 }
