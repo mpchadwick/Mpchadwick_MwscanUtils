@@ -2,6 +2,11 @@
 
 class Mpchadwick_MwscanUtils_ContentdumpController extends Mage_Core_Controller_Front_Action
 {
+    protected $configKeys = array(
+        'design/head/includes',
+        'design/footer/absolute_footer'
+    );
+
     public function indexAction()
     {
         $data = array_merge(
@@ -21,8 +26,11 @@ class Mpchadwick_MwscanUtils_ContentdumpController extends Mage_Core_Controller_
         // @codingStandardsIgnoreStart
         // TODO - Fetch for ALL store view...
         // @codingStandardsIgnoreEnd
-        $content[] = Mage::getStoreConfig('design/head/includes');
-        $content[] = Mage::getStoreConfig('design/footer/absolute_footer');
+        $config = Mage::getModel('core/config_data')
+            ->getCollection()
+            ->addFieldToFilter('path', array('in' => $this->configKeys));
+
+        $content = array_merge($content, $config->getColumnValues('value'));
 
         $container = new Varien_Object;
         $container->setContent($content);
