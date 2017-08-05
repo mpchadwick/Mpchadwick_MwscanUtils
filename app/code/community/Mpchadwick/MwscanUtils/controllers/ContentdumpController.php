@@ -9,28 +9,18 @@ class Mpchadwick_MwscanUtils_ContentdumpController extends Mage_Core_Controller_
 
     public function indexAction()
     {
-        $data = array_merge(
+        $content = array_merge(
             Mage::getModel('cms/page')
                 ->getCollection()
-                ->getData(),
+                ->getColumnValues('content'),
             Mage::getModel('cms/block')
                 ->getCollection()
-                ->getData()
+                ->getColumnValues('content'),
+            Mage::getModel('core/config_data')
+                ->getCollection()
+                ->addFieldToFilter('path', array('in' => $this->configKeys))
+                ->getColumnValues('value')
         );
-
-        $content = array();
-        foreach ($data as $datum) {
-            $content[] = $datum['content'];
-        }
-
-        // @codingStandardsIgnoreStart
-        // TODO - Fetch for ALL store view...
-        // @codingStandardsIgnoreEnd
-        $config = Mage::getModel('core/config_data')
-            ->getCollection()
-            ->addFieldToFilter('path', array('in' => $this->configKeys));
-
-        $content = array_merge($content, $config->getColumnValues('value'));
 
         $container = new Varien_Object;
         $container->setContent($content);
