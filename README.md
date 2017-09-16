@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/mpchadwick/Mpchadwick_MwscanUtils.svg?branch=master)](https://travis-ci.org/mpchadwick/Mpchadwick_MwscanUtils)
 
-A set of utilities for use in tandem with [magento-malware-scanner](https://github.com/gwillem/magento-malware-scanner).
+A set of utilities for use in tandem with [magento-malware-scanner](https://github.com/gwillem/magento-malware-scanner) for Magento 1.
+
+Magento 2 version available [here](https://github.com/mpchadwick/Mpchadwick_MwscanUtils2).
 
 ## Features
 
